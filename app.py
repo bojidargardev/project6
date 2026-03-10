@@ -28,3 +28,20 @@ st.write("Заглавие:", book["title"])
 st.write("Автор:", book["author"])
 st.write("Цена:", book["price"])
 st.write("-------------------")
+
+# =====================
+# Търсене по автор
+# =====================
+st.header(" Търсене по автор")
+search_author = st.text_input("Въведи име на автор")
+if st.button("Търси по автор"):
+
+found = False
+
+for book in st.session_state.books:
+if book["author"] == search_author:
+st.write(book)
+found = True
+
+if found == False:
+st.write("Няма намерени книги от този автор.")
